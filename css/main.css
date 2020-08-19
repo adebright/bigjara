@@ -206,21 +206,6 @@
     vertical-align: middle;
   }
   
-  table {
-    border-collapse: collapse;
-  }
-  
-  caption {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-    color: #6c757d;
-    text-align: left;
-    caption-side: bottom;
-  }
-  
-  th {
-    text-align: inherit;
-  }
   
   label {
     display: inline-block;
@@ -583,6 +568,13 @@
     margin-right : auto ; 
     margin-left : auto
 }
+.header-wrapper {
+    width : 100%;
+    padding-right : 30px;
+    padding-left : 30px;
+    margin-right : auto ; 
+    margin-left : auto
+}
 .wrap {
     display : -ms-flexbox ; 
     display : flex ; 
@@ -660,6 +652,9 @@
 .bg-faint {
   background : #ccc
 }
+.bg-fainted {
+    background : rgba(253, 245, 245, 0.55)
+}
 .bg-orange {
   background : #e4ba16
 }
@@ -678,6 +673,7 @@
 .no-border {
   border : none ; 
 }
+
 .btn-rounded {
   border-radius : 2.5rem;
 }
@@ -764,30 +760,148 @@ a.d-inline {
 .dark-text-faint {
   color : rgba(0, 0, 0, 0.65) ; 
 }
-form {
-  box-shadow: -1px -1px 0px 0 #fff; 
-  padding : 20px;
-  background: #fff;
-  border-radius: 5px!important;
-  font : .95rem "Segoe UI" , sans-serif;
-  font-weight: 350;
-  
-}
+
 .justify-content-center {
   margin : 0 auto ;
   padding-top : 2rem;
  
 }
-.input-field {
-width : 100%;
-display : inline-block ; 
-margin : 4px 0;
-padding : 4px 4px;
-border : .5px solid #ccc;
-box-shadow: border-box;
 
-} 
+/* -------Designing Forms-----  */
+.radius-5 {
+    border-radius: 5px;
+}
+.form-shadow {
+    box-shadow: -1px -1px 0px 0 #fff; 
+    /* overflow-y :auto ; 
+    height : 700px; 
+    adding overlow but the scroll needs to be*/
+}
+.pad-20 {
+    padding : 20px; 
+}
+.pad-left-and-right {
+    padding-left : 10px;
+    padding-right: 10px;
+}
+.pad-input {
+    padding : 6px;
+}
+.input-m-b-1{
+    margin-bottom: .85rem;
+}
+.input-border-faint {
+    border : .85px solid #ccc;
+}
+
+.input-border-faint:focus {
+    outline : 0 ; 
+    border : .1px solid #ccc;
+    box-shadow: 0 0 0 0.01rem #339;
+}
+.bold-350 {
+    font-weight: 350;
+}
+.bg-input-github {
+    background : rgb(241, 238, 238)
+}
+.d-block {
+    display : block;
+}
+.input {
+    display : inline-block ; 
+    width : 100% ; 
+    box-shadow : border-box ; 
+}
+.label {
+    font-size : .85rem;
+    font-weight: 450;
+}
+.w-50px {
+    min-width: 50px;
+}
+.w-30 {
+    max-width: 30%;
+    min-width: 30%;
+}
+.bg-pink {
+    background: var(--pink);
+}
+/* Styling Tables */
+.collapse-border {
+    border-collapse: collapse;
+}
+.seperate-border {
+    border-collapse: separate;
+}
+h4.header-wrapper , h5.header-wrapper {
+    text-align: center;
+}
+.caption-top {
+    caption-side : top
+}
+.table , .table th , .table td {
+    border-collapse: collapse; 
+    border-spacing: 0.625rem; 
+    font-size: 1rem;  
+    padding : .3rem ;
+    /* border : 1px solid rgba(0,0,0,0.46); */
+}
+.overflowed-table {
+    height : 800px!important ; 
+    width : 300px ; 
+    overflow : scroll ; 
+    padding : 0!important ; 
+}
+.border-radius-top-right {
+   border-top-right-radius: 10px;
+}
+.border-radius-top-left {
+    border-top-left-radius: 10px;
+ }
+.table-responsive {
+    overflow: scroll;
+}
+.table-responsive-y {
+    overflow-x: auto;
+}
+.h-250 {
+    height : 250px
+}
+tbody  tr:nth-child(odd){
+    background : #ccc;
+}
+
+tr th {
+    height : 3.75rem;
+    background : dodgerblue;
+    color : #fff;
+    outline : none; 
+    border : none;
+}
+tbody tr {
+    height : 3.175rem;
+}
+.h-10px {
+    height : 0.625rem ; 
+}
+.vertical-align {
+    vertical-align: baseline;
+}
+  /* table , th , td {
+    border : 1px solid #000;
+    border-collapse: collapse;
+    font-size : 1.2rem;
+    border-spacing: 10px; */
+    /* width : 100%;
+    height : 100%; */
+    /* table-layout:fixed; */
+    /* empty-cells: hide; */
+    /* controlling the layout of a table */
+  /* } */
+
 /*Cards*/ 
+/* For making an image rectangular and sizable across different viewport */
 .img-rectangular {
     width : 100%;
     object-fit: cover;
@@ -802,7 +916,11 @@ box-shadow: border-box;
     .img-rectangular {
         height: 10vw;
     }
+    h4.header-wrapper , h5.header-wrapper {
+        text-align: left;
+    }
 }
+
 .content-card {
     background : #f2f2f2a8 ;
     padding : 1.5rem;
@@ -875,29 +993,7 @@ box-shadow: border-box;
   border-radius: 50%; 
   border : none;
 }
-input[type="submit"] , .processing{
-  background : rgb(10, 114, 146);
-  color : #fff;
-  border : none;
-  border-radius: 3px;
-  text-transform: uppercase;
-  font-size: 1rem;
-}
-input:focus {
-  border : none!important;
-}
-.processing {
-  display : none ; 
-}
-.active-now {
-  display : block;
-  background : rgb(10, 114, 146)!important;
-  color : #fff;
-  border : none;
-  border-radius: 3px;
-  text-transform: uppercase;
-  font-size: 1rem;
-} 
+
 .d-column {
   flex-direction: column;
 }
@@ -1020,6 +1116,7 @@ input:focus {
   before and after executing it 
   animation-play-state : Let you pause and resume the animation state
 */
+
 @keyframes grow {
   0%{
     opacity: 0.4;
@@ -1122,6 +1219,26 @@ input:focus {
     100%{
         opacity: 0;
     }
+}
+.fade-in {
+    animation-name : faded ; 
+    animation-duration: .50s ;
+    animation-timing-function: ease-in;
+    animation-delay: 0ms ;
+    animation-iteration-count:1;
+    animation-fill-mode: none;
+    animation-play-state: running;
+  }
+@keyframes faded {
+      0%{
+          opacity : 0.5
+      }
+      50%{
+        opacity : 0.75;
+      }
+      100%{
+          opacity: 1;
+      }
 }
 .fade-out {
     animation : fade-out 1s ease-out 0ms
@@ -1374,6 +1491,50 @@ linear-gradient(deg , color , etc)
 .pad-25 {
   padding : 25px;
 }
+/** Styling Dashboard **/
+.d-wrapper {
+    display: flex;
+    justify-content: space-between;
+    height : 100%;
+}
+.sticky {
+    display: none;
+}
+.main {
+    width : 100%;
+    height: 100%;
+}
+
+.app-sidebar  ul {
+    max-height: 100%;
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+.app-name {
+    color : rgba(255 , 255 , 255 , 0.55) ; 
+    padding-left : 2rem;
+    margin-bottom: 2rem; 
+    font-size : 2rem;
+}
+.nav-link , .nav-link:hover {
+    color: rgba(255 , 255 , 255 , 0.85);
+    text-decoration : none ; 
+    font : 1rem "Segoe UI" , Helvetica , sans-serif;
+}
+.bg-dark-light {
+    background: rgb(12, 9, 9);
+}
+.bg-dodgerblue {
+    background: dodgerblue;
+}
+.white-border-bottom {
+    border-bottom:.45px solid rgba(255 , 255 , 255 , 0.15);
+}
+/* .sticky>p {
+    margin-bottom:1.5rem;
+    border-bottom:.45px solid rgba(255 , 255 , 255 , 0.65);
+    padding : 10px ; 
+} */
 /*Handling overlay*/ 
 .container-overlay {
   position: relative;
@@ -1657,9 +1818,7 @@ linear-gradient(deg , color , etc)
     margin-right: 10px;
     border-radius: 10px;
 }
-/* .d-nothing {
-    display : none;
-} */
+
 /** Media Queries for larger viewport **/
 @media (min-width : 576px){
   .wrapper {
@@ -1744,11 +1903,158 @@ linear-gradient(deg , color , etc)
     max-width: 100%;
   }
 }
+.m-l-2 {
+    margin-left : 8px;
+}
+.space-right {
+    margin-right: 0;
+}
+
+.h {
+    width: 100%;
+}
+.w-magogo {
+    width: 100%;
+}
+/* .drop-content {
+    background: ;
+} */
+/* Styling for dropdown */
+.d-nothing {
+    display : none;
+}
+.dropdown-content {
+    color : #000 ; 
+    padding : 15px;
+    outline : none ; 
+    border : 1px solid #ccc;
+    /* text-align : center ;  */
+    position: absolute;
+    top : 50px;
+    right:0;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    /* display : block ;  */
+}
+
+.drop:hover .dropdown-content {
+    display : block;
+}
+/* Styling for our search box in the dashboard*/ 
+.nav-search {
+    color : #fff;
+}
+.search-icon-box {
+    padding-top : .75rem;
+}
+.user-profile-style {
+    padding-top : 1rem;
+    padding-bottom : 1rem;
+}
+.brand-name {
+    font-size : 1.5rem;
+    font-weight: 200;
+    padding-top : 10px;
+    padding-bottom : 10px;
+}
+.d-nothing-sm {
+    display : none;
+}
+@media (max-width : 400px){
+    .d-nothing-sm {
+      display : none;
+    }
+    .d-active-sm {
+        display : block;
+    }
+    /* .sticky {
+        display: none;
+    } */
+    .main-now {
+        width : 50%;
+        height: 100%;
+    }
+}
 @media (min-width : 768px){
+    .brand-name {
+        font-size : 2rem;
+        font-weight: 250;
+        padding-top : 0;
+        padding-bottom :0;
+    }
+    .dashboard-search-container {
+        display : -ms-flexbox ; 
+        display : flex ; 
+        width : 100%;
+        background : #fff;
+        border-radius: 5px;
+        height : 40px;
+        padding : 5px ;
+        padding-left : 10px;
+        padding-right: 10px;
+    }
+    .dashboard-user-menu {
+        display : -ms-flexbox ; 
+        display : flex ; 
+        width : 100%;
+        border-radius: 5px;
+        height : 40px;
+        padding : 10px;
+    }
+    .user-profile {
+        margin-left:100px;
+        margin-right:5px;
+        text-align:center;
+    }
+    .search-icon-box {
+        width : 2%;
+        color : #000;
+        padding : 0;
+    }
+    .nav-search {
+        color : inherit;
+    }
+    .user-profile-style {
+        padding-top : 5px;
+        padding-bottom : 5px;
+    }
+    .overflowed-table {
+        height : 800px!important ; 
+        width : 100%!import ant ; 
+        overflow : visible ; 
+        padding : 0!important ; 
+    }
+    .w-magogo {
+        width : 33.333333%;
+    }
+    .space-right {
+        margin-right: 10px;
+    }
  /* .nav-link  {
   display : inline-block ; 
   margin-right : 1rem;
  } */
+ .header-wrapper {
+    width : 100%;
+    padding-right : 0px;
+    padding-left : 0px;
+    margin-right : auto ; 
+    margin-left : auto
+}
+ .main {
+     width : 85%;
+ }
+ .sticky {
+    width : 15%;
+    position: -webkit-sticky;
+    position: sticky;
+    top : 0;
+    height : 100vh;
+    display : block;
+    /* overflow-y : scroll ;  */
+}
  .font-small {
     font-size: 1.5rem;
 }
